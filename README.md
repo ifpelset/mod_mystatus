@@ -6,15 +6,18 @@
 
 ### Compilation && Install
 1. Compilation
+
 ```python
     apxs -c mod_mystatus.c -I[Your cJSON include file directory] -L[Your cJSON static lib directory] -lcjson -lm
 ```
 2. Install
+
 ```python
     apxs -i -a mod_mystatus.la
 ```
 3. Configuration
     Just add the following content into httpd.conf
+
 ```python
     <Location "/mystatus">
        SetHandler mystatus-handler
@@ -22,7 +25,9 @@
 ```
 
 ### Usage
+
     Use http client to send a post request to http://your ip/mystatus, request content is a json string, it contains a request regex expression, as following:
+
 ```javascript
     {
         "pattern": "^/a.avi$"
