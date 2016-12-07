@@ -16,7 +16,8 @@ apxs -c mod_mystatus.c -I[Your cJSON include file directory] -L[Your cJSON stati
 apxs -i -a mod_mystatus.la
 ```
 - Configuration
-    Just add the following content into httpd.conf
+
+Just add the following content into httpd.conf
 
 ```python
 <Location "/mystatus">
@@ -26,7 +27,7 @@ apxs -i -a mod_mystatus.la
 
 ### Usage
 
-    Use http client to send a post request to http://your ip/mystatus, request content is a json string, it contains a request regex expression, as following:
+Use http client to send a post request to http://your ip/mystatus, request content is a json string, it contains a request regex expression, as following:
 
 ```javascript
 {
