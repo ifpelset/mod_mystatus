@@ -5,17 +5,17 @@
 [cJSON](https://github.com/DaveGamble/cJSON), Ultralightweight JSON parser in ANSI C 
 
 ### Compilation && Install
-1. Compilation
+- Compilation
 
 ```python
 apxs -c mod_mystatus.c -I[Your cJSON include file directory] -L[Your cJSON static lib directory] -lcjson -lm
 ```
-2. Install
+- Install
 
 ```python
 apxs -i -a mod_mystatus.la
 ```
-3. Configuration
+- Configuration
     Just add the following content into httpd.conf
 
 ```python
