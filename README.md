@@ -39,7 +39,7 @@
  - Install apxs
      Go to [apachelounge](http://www.apachelounge.com/download/apxs_win32.zip) to download apxs_win32.zip.
      Extract it to [your path]\apxs.
-     Open **VS201X developer command interpret** and change dir to [your path]\apxs.
+     Open **VS201X developer command interpreter** and change dir to [your path]\apxs.
      Execute *perl Configure.pl --with-apache2=[your apache root path] --with-apache-prog=httpd.exe*.
      Modify [your apache root path]\build\config_vars.mk: 
      ```python
@@ -69,12 +69,13 @@
     ```
 ### Usage
 
-    Use http client to send a post request to http://your ip/mystatus, request content is a json string, it contains a request regex expression, as following:
+    Use http client to send a post request to http://[your ip]/mystatus, request content is a json string, it contains a request regex expression, as following:
 
     ```javascript
     {
         "pattern": "^/a.avi$"
-    } ```
+    }
+    ```
 
 ### Screenshot
 ![result](result.png)
