@@ -33,8 +33,9 @@ Just add the following content into httpd.conf
 ```
 
 #### Windows
-- Configure apxs
--   123
+* Configure apxs
+ + 123
+ - 456
 
 - Compilation && Install
 
