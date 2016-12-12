@@ -78,8 +78,8 @@
     ```
 
 ### Usage
-
-    Use http client to send a post request to *http://[your ip]/mystatus*, request content is a json string, it contains a request regex expression, as following:
+    Use http client to send a post request to *http://[your ip]/mystatus*, request content is a json string, 
+    it contains a request regex expression, as following:
 
     ```javascript
     {
