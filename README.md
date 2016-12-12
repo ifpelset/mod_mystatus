@@ -1,5 +1,5 @@
 ## mod_mystatus
-> A apache(httpd) status module that really realtime, I just handle to output specific url connection count and bandwidth.
+> An apache(httpd) status module that really realtime, I just handle to output specific url connection count and bandwidth.
 
 ### Dependency
 [cJSON](https://github.com/DaveGamble/cJSON), Ultralightweight JSON parser in ANSI C 
@@ -13,7 +13,7 @@
     # I have built a static lib if you use CentOS 7, use it.
     apxs -c mod_mystatus.c -Ilinux/cJSON -Llinux/cJSON -lcjson -lm
     # or
-    # You can build cJSON.c when build mod_mystatus.c, but mod_mystatus.c should be first location.
+    # You can build cJSON.c when build mod_mystatus.c, but mod_mystatus.c should be at first location.
     apxs -c mod_mystatus.c linux/cJSON/cJSON.c -Ilinux/cJSON -lm 
 
     ```
@@ -35,7 +35,7 @@
 * Configure apxs
  - Install perl
 
-     Go to [activestate](http://www.activestate.com/activeperl) to download activeperl.
+     Go to [activestate](http://www.activestate.com/activeperl) to download **activeperl**.
 
      Double click and next to install.
 
@@ -43,7 +43,7 @@
 
      Go to [apachelounge](http://www.apachelounge.com/download/apxs_win32.zip) to download **apxs_win32.zip**.
 
-     Extract it to *[your path]\apxs*.
+     Extract it into *[your path]\apxs*.
 
      Open **VS201X developer command interpreter** and change dir to *[your path]\apxs*.
 
@@ -59,7 +59,7 @@
      # You should use /machine:X86 and /libpath:"[your mod_mystatus path]/windows/pcre-8.33/lib" if your OS is 32 bit.
      LDFLAGS = kernel32.lib pcreposix3.lib /nologo /subsystem:windows /dll /machine:x64 /libpath:"[your apache root path]\lib" /libpath:"[your mod_mystatus path]\windows\pcre-8.33\lib\x64"
      ```
-     Add *[your apache root path]\bin* to your windows system path.
+     Add *[your apache root path]\bin* into your windows system path.
 
 * Compilation && Install
     ```python
@@ -69,7 +69,7 @@
 
 * Configuration
 
-    Just add the following content into httpd.conf
+    Just add the following content into **httpd.conf**
 
     ```python
     <Location "/mystatus">
@@ -78,7 +78,7 @@
     ```
 ### Usage
 
-    Use http client to send a post request to http://[your ip]/mystatus, request content is a json string, it contains a request regex expression, as following:
+    Use http client to send a post request to *http://[your ip]/mystatus*, request content is a json string, it contains a request regex expression, as following:
 
     ```javascript
     {
