@@ -24,7 +24,8 @@
     ```
 * Configuration
 
-    Just add the following content into httpd.conf ```python
+    Just add the following content into httpd.conf 
+    ```python
     <Location "/mystatus">
         SetHandler mystatus-handler
     </Location>
