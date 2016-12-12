@@ -41,15 +41,15 @@
 
  - Install apxs
 
-     Go to [apachelounge](http://www.apachelounge.com/download/apxs_win32.zip) to download apxs_win32.zip.
+     Go to [apachelounge](http://www.apachelounge.com/download/apxs_win32.zip) to download **apxs_win32.zip**.
 
-     Extract it to [your path]\apxs.
+     Extract it to *[your path]\apxs*.
 
-     Open **VS201X developer command interpreter** and change dir to [your path]\apxs.
+     Open **VS201X developer command interpreter** and change dir to *[your path]\apxs*.
 
      Execute *perl Configure.pl --with-apache2=[your apache root path] --with-apache-prog=httpd.exe*.
 
-     Modify [your apache root path]\build\config_vars.mk: 
+     Modify *[your apache root path]\build\config_vars.mk*: 
 
      ```python
      CC = cl.exe
@@ -59,7 +59,7 @@
      # You should use /machine:X86 and /libpath:"[your mod_mystatus path]/windows/pcre-8.33/lib" if your OS is 32 bit.
      LDFLAGS = kernel32.lib pcreposix3.lib /nologo /subsystem:windows /dll /machine:x64 /libpath:"[your apache root path]\lib" /libpath:"[your mod_mystatus path]\windows\pcre-8.33\lib\x64"
      ```
-     Add [your apache root path]\bin to your windows system path.
+     Add *[your apache root path]\bin* to your windows system path.
 
 * Compilation && Install
     ```python
