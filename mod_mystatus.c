@@ -453,9 +453,21 @@ static apr_off_t ap_logio_get_last_bytes(conn_rec *c)
     return 0;
 }
 
+static int status_pre_config(apr_pool_t *p, apr_pool_t *plog, apr_pool_t *ptemp)
+{
+    /* When mod_status is loaded, default our ExtendedStatus to 'on'
+     * other modules which prefer verbose scoreboards may play a similar game.
+     * If left to their own requirements, mpm modules can make do with simple
+     * scoreboard entries.
+     */
+    ap_extended_status = 1;
+    return OK;
+}
+
 static void register_hooks(apr_pool_t *p)
 {
     ap_hook_handler(mystatus_handler, NULL, NULL, APR_HOOK_MIDDLE);
+    ap_hook_pre_config(status_pre_config, NULL, NULL, APR_HOOK_LAST);
     ap_hook_post_config(status_init, NULL, NULL, APR_HOOK_MIDDLE);
 
     mystatus_logio_add_bytes_in = APR_RETRIEVE_OPTIONAL_FN(ap_logio_add_bytes_in);
