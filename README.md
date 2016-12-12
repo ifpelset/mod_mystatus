@@ -47,7 +47,7 @@
 
      Open **VS201X developer command interpreter** and change dir to *[your path]\apxs*.
 
-     Execute *perl Configure.pl --with-apache2=[your apache root path] --with-apache-prog=httpd.exe*.
+     Execute *perl Configure.pl --with-apache2=[your apache root path] --with-apache-prog=httpd.exe* to generate apxs.bat etc.
 
      Modify *[your apache root path]\build\config_vars.mk*: 
 
@@ -76,6 +76,7 @@
         SetHandler mystatus-handler
     </Location>
     ```
+
 ### Usage
 
     Use http client to send a post request to *http://[your ip]/mystatus*, request content is a json string, it contains a request regex expression, as following:
