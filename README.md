@@ -36,14 +36,19 @@
  - Install perl
 
      Go to [activestate](http://www.activestate.com/activeperl) to download activeperl.
+
      Double click and next to install.
 
  - Install apxs
 
      Go to [apachelounge](http://www.apachelounge.com/download/apxs_win32.zip) to download apxs_win32.zip.
+
      Extract it to [your path]\apxs.
+
      Open **VS201X developer command interpreter** and change dir to [your path]\apxs.
+
      Execute *perl Configure.pl --with-apache2=[your apache root path] --with-apache-prog=httpd.exe*.
+
      Modify [your apache root path]\build\config_vars.mk: 
 
      ```python
