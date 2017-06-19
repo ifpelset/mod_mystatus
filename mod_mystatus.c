@@ -383,6 +383,10 @@ static int output_bandwidth_connection_count(request_rec *r) {
         flow_abs = status_map1.status.flow - status_map2.status.flow;
         flow_abs = (flow_abs < 0) ? -flow_abs : flow_abs;
 
+        if (status_map2.status.conn_count == 0) {
+            flow_abs = 0;
+        }
+
         cJSON_AddNumberToObject(root, "connection_count", status_map2.status.conn_count);
         cJSON_AddNumberToObject(root, "bandwidth", flow_abs);
 
