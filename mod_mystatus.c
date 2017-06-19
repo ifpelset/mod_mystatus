@@ -9,7 +9,11 @@
 
 #include <regex.h>
 
-#include "cJSON.h"
+#ifdef WIN32
+#include "windows/cJSON/cJSON.h"
+#else
+#include "linux/cJSON/cJSON.h"
+#endif
 
 #define ENO_ERROR 0
 #define EPARAMETER_IS_NULL 1
@@ -75,15 +79,22 @@ static int get_url_request_part(request_rec *r, const char *request, char *resul
     char err_msg[128] = {0};
 
     const char *p = strchr(request, ' ');
-    const char *q = strchr(p + 1, ' ');
 
-    if (p && q) {
-        strncpy(result, p + 1, q - p - 1);
-    } else {
+    if (!p) {
         retval = ESPLIT_REQUEST_ERROR;
         apr_snprintf(err_msg, sizeof (err_msg),
                      "split the request error, request is %s", request);
         set_error_message(r, retval, err_msg);
+
+        return retval;
+    }
+
+    const char *q = strchr(p + 1, ' ');
+
+    if (q) {
+        strncpy(result, p + 1, q - p - 1);
+    } else {
+        strncpy(result, p + 1, request + strlen(request) - p - 1);
     }
 
     return retval;
