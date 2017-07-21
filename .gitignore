@@ -1,0 +1,6 @@
+.libs/
+*.config
+*.creator
+*.user
+*.files
+*.includes

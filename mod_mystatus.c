@@ -178,7 +178,7 @@ static int find_url_status_map_by_pattern(
     }
 
     regex_t regex;
-    if (regcomp(&regex, pattern, 0) < 0) {
+    if (regcomp(&regex, pattern, 0) != 0) {
         retval = EREGCOMP_ERROR;
         apr_snprintf(err_msg, sizeof (err_msg),
                      "regcomp function error, pattern is %s", pattern);
