@@ -63,7 +63,8 @@
 
 * Compilation && Install
     ```python
-    apxs -c -i -a mod_mystatus.c -Iwindows/cJSON -Lwindows/cJSON libapr-1.lib libaprutil-1.lib libapriconv-1.lib libhttpd.lib
+    > cd mod_mystatus
+    > apxs -c -i -a mod_mystatus.c "windows\cJSON\cJSON.c" libapr-1.lib libaprutil-1.lib libapriconv-1.lib libhttpd.lib
     # copy pcre3.dll and pcreposix3.dll in [your mod_mystatus path]\pcre-8.33  to [your apache root path]\bin.
     ```
 
