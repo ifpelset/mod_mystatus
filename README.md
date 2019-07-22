@@ -11,10 +11,10 @@
     ```python 
 
     # I have built a static lib if you use CentOS 7, use it.
-    apxs -c mod_mystatus.c -Ilinux/cJSON -Llinux/cJSON -lcjson -lm
+    apxs -c -Ilinux/cJSON -Llinux/cJSON -lcjson -lm mod_mystatus.c
     # or
     # You can build cJSON.c when build mod_mystatus.c, but mod_mystatus.c should be at first location.
-    apxs -c mod_mystatus.c linux/cJSON/cJSON.c -Ilinux/cJSON -lm 
+    apxs -c -Ilinux/cJSON -lm mod_mystatus.c linux/cJSON/cJSON.c 
 
     ```
 * Install
@@ -85,6 +85,10 @@
     {
         "pattern": "^/a.avi$"
     }
+   ```
+   curl example:
+   ```bash
+    curl -H "Content-Type:application/json" -X POST -d '{"pattern": "^/a.avi$"}' http://172.30.60.5/mystatus
    ```
 
 ### Screenshot
